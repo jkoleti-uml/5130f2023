@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jithendreswar Rao Koleti</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #97d0dd;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #267f92;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 5%;
+            width: 180px;
+            height: 220px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #565454;
+            color: #fff;
+        }
+        ol, ul {
+            margin: 0 0 20px 20px;
+        }
+        p {
+            line-height: 1.6;
+        }
+
+        /* Horizontally align the headers in the navigation bar */
+        nav {
+            text-align: center;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        form label {
+            display: block;
+            text-align: left;
+            margin-top: 2px;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea, select {
+            text-align: left;
+            width: 50%; 
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        form button[type="submit"] {
+            background-color: #0074d9;
+            color: #fff;
+            border: 10px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        form button[type="reset"] {
+            background-color: #ed0b0b;
+            color: #fff;
+            border: 10px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jithendreswar Rao Koleti</h1>
+    </header>
+    <nav>
+        <ul>
+            <br>
+            <li><a href="koleti-jithendreswarrao_hw3_secondPhaseOfApp.html">Home</a></li>
+            <li><a href="stocks.html">Investment Portfolio</a></li>
+            <li><a href="form.html">Visitor Details</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h2><center>Visitor Details Form</center></h2>
+        <form id="visitor-form" method="post">
+            
+            <label><h4>Identity:</h4></label>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+    
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="None">Prefer not to say</option>
+            </select><br>
+
+            <label for="date-of-birth">Date of Birth:</label>
+            <input type="date" id="date-of-birth" name="date-of-birth" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="mobile-number">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            <br><br>
+    
+            <label><h4>Address:</h4></label>
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" required>
+    
+            <label for="town">Town/City:</label>
+            <input type="text" id="town" name="town" required>
+    
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+    
+            <label for="zip">ZIP code:</label>
+            <input type="text" id="zip" name="zip" required>
+            <br><br>
+            
+            <label><h4>Other:</h4></label>
+            <label for="fact">Enter facts about you:</label>
+            <textarea id="fact" name="fact" rows="3" required placeholder="Write something about yourself that very few people know..."></textarea><br>
+
+            <label for="resume">Upload your Resume(only .pdf file):</label>
+            <input type="file" id="resume" name="resume" accept=".pdf"><br>
+
+            <button type="reset">Clear</button>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            // Function to display and initialize form data
+            function showExistingFormData() {
+
+                const firstNameField = document.getElementById('first-name');
+                const lastNameField = document.getElementById('last-name');
+                const dobField = document.getElementById('date-of-birth');
+                const genderField = document.getElementById('gender');
+                const emailField = document.getElementById('email');
+                const mobileField = document.getElementById('mobile');
+                const streetField = document.getElementById('street');
+                const townField = document.getElementById('town');
+                const stateField = document.getElementById('state');
+                const zipField = document.getElementById('zip');
+                const factField = document.getElementById('fact');
+                // const resumeField = document.getElementById('resume'); - ignoring this because session storage not working for file uploads
+
+                
+                // Checking if sessionStorage has stored data
+                if (sessionStorage.getItem('first-name')) {
+                    firstNameField.value = sessionStorage.getItem('first-name');
+                }
+                if (sessionStorage.getItem('last-name')) {
+                    lastNameField.value = sessionStorage.getItem('last-name');
+                }
+                if (sessionStorage.getItem('date-of-birth')) {
+                    dobField.value = sessionStorage.getItem('date-of-birth');
+                }
+                if (sessionStorage.getItem('gender')) {
+                    genderField.value = sessionStorage.getItem('gender');
+                }
+                if (sessionStorage.getItem('email')) {
+                    emailField.value = sessionStorage.getItem('email');
+                }
+                if (sessionStorage.getItem('mobile')) {
+                    mobileField.value = sessionStorage.getItem('mobile');
+                }
+                if (sessionStorage.getItem('street')) {
+                    streetField.value = sessionStorage.getItem('street');
+                }
+                if (sessionStorage.getItem('town')) {
+                    townField.value = sessionStorage.getItem('town');
+                }
+                if (sessionStorage.getItem('state')) {
+                    stateField.value = sessionStorage.getItem('state');
+                }
+                if (sessionStorage.getItem('zip')) {
+                    zipField.value = sessionStorage.getItem('zip');
+                }
+                if (sessionStorage.getItem('fact')) {
+                    factField.value = sessionStorage.getItem('fact');
+                }
+    
+                // update sessionStorage in sync with changes in the form
+                firstNameField.addEventListener('input', function () {
+                    sessionStorage.setItem('first-name', firstNameField.value);
+                });
+                lastNameField.addEventListener('input', function () {
+                    sessionStorage.setItem('last-name', lastNameField.value);
+                });
+                dobField.addEventListener('input', function () {
+                    sessionStorage.setItem('date-of-birth', dobField.value);
+                    console.log(sessionStorage.getItem('gender'))
+                    if ((sessionStorage.getItem('gender')) === null) {
+                        sessionStorage.setItem('gender', 'Male');
+                    }
+                });
+                emailField.addEventListener('input', function () {
+                    sessionStorage.setItem('email', emailField.value);
+                });
+                genderField.addEventListener('input', function () {
+                    sessionStorage.setItem('gender', genderField.value);
+                });
+                mobileField.addEventListener('input', function () {
+                    sessionStorage.setItem('mobile', mobileField.value);
+                });
+                streetField.addEventListener('input', function () {
+                    sessionStorage.setItem('street', streetField.value);
+                });
+                townField.addEventListener('input', function () {
+                    sessionStorage.setItem('town', townField.value);
+                });
+                stateField.addEventListener('input', function () {
+                    sessionStorage.setItem('state', stateField.value);
+                });
+                zipField.addEventListener('input', function () {
+                    sessionStorage.setItem('zip', zipField.value);
+                });
+                factField.addEventListener('input', function () {
+                    sessionStorage.setItem('fact', factField.value);
+                });
+            }
+    
+            // Function to handle form submission
+            function handleSubmitButton(event) {
+                event.preventDefault(); // Prevent the form from submitting
+                alert('Your details got submitted.');
+
+                const formData = {
+                    firstName: document.getElementById('first-name').value,
+                    lastName: document.getElementById('last-name').value,
+                    gender: document.getElementById('gender').value,
+                    dob: document.getElementById('date-of-birth').value,
+                    email: document.getElementById('email').value,
+                    mobile: document.getElementById('mobile').value,
+                    address: {
+                        street : document.getElementById('street').value,
+                        town : document.getElementById('town').value,
+                        state : document.getElementById('state').value,
+                        zip : document.getElementById('zip').value,
+                    },
+                    fact: document.getElementById('fact').value,
+                };
+    
+                // Storing the data in localStorage
+                localStorage.setItem('formData', JSON.stringify(formData));
+                
+                // Clearing sessionStorage
+                sessionStorage.removeItem('first-name');
+                sessionStorage.removeItem('last-name');
+                sessionStorage.removeItem('date-of-birth');
+                sessionStorage.removeItem('gender');
+                sessionStorage.removeItem('email');
+                sessionStorage.removeItem('mobile');
+                sessionStorage.removeItem('street');
+                sessionStorage.removeItem('town');
+                sessionStorage.removeItem('state');
+                sessionStorage.removeItem('zip');
+                sessionStorage.removeItem('fact');
+
+                // relaod page in 100ms
+                setTimeout(function () {
+                    window.location.reload();
+                }, 100);
+            }
+
+            function handleClearButton(event) {
+                event.preventDefault(); // Prevent the form from submitting
+                alert('All the details you entered would be cleared');
+                sessionStorage.removeItem('first-name');
+                sessionStorage.removeItem('last-name');
+                sessionStorage.removeItem('date-of-birth');
+                sessionStorage.removeItem('gender');
+                sessionStorage.removeItem('email');
+                sessionStorage.removeItem('mobile');
+                sessionStorage.removeItem('street');
+                sessionStorage.removeItem('town');
+                sessionStorage.removeItem('state');
+                sessionStorage.removeItem('zip');
+                sessionStorage.removeItem('fact');
+                localStorage.removeItem('formData');
+                // relaod page in 100ms
+                setTimeout(function () {
+                    window.location.reload();
+                }, 100);
+            }
+            showExistingFormData();
+            document.getElementById('visitor-form').addEventListener('submit', handleSubmitButton);
+            document.getElementById('visitor-form').addEventListener('reset', handleClearButton);
+        </script>
+    </main>
+</body>
+</html>
+
