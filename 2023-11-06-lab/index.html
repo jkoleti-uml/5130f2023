@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 02040114 Form Validation</title>
+</head>
+<body>
+    <h2>02040114 - Form Validation</h2>
+    <form id="validate-form">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br>
+    </br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required><br>
+    </br>
+        <label for="url">URL: </label>
+        <input type="text" id="url" name="url" required><br>
+    </br>
+        <input type="button" value="clear" onclick="clearForm()">
+        <input type="submit" value="Submit">
+    </br>
+    </br>
+
+    </form>
+
+    <div id="errorList" style="color: red;"></div>
+
+    <script>
+        const form = document.getElementById("validate-form");
+        const resultDiv = document.getElementById("result");
+        const errorList = document.getElementById("errorList");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            const phoneRegex = /^(\+?1\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/;
+            const urlRegex = /^((https|http|ftp):\/\/)?(www\.)?([a-zA-Z0-9.-]+\.[a-zA-Z]{2,3})(\/[^\s]*)?$/;
+
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const url = document.getElementById("url").value;
+
+            let errorMessages = [];
+
+            if (!emailRegex.test(email)) {
+                errorMessages.push("Invalid email address entered - (valid email - username@email.com)");
+            }
+
+            if (!phoneRegex.test(phone)) {
+                errorMessages.push("Invalid phone number entered - (valid number - 999-999-9999)");
+            }
+
+            if (!urlRegex.test(url)) {
+                errorMessages.push("Invalid URL entered - (valid URL - https://www.cs.uml.edu)");
+            }
+
+            if (errorMessages.length === 0) {
+                errorList.innerHTML = "All fields are valid!";
+                errorList.style.color = "green";
+            } else {
+                const errorListItems = errorMessages.map(message => `<li>${message}</li>`).join("");
+                errorList.innerHTML = `<ul>${errorListItems}</ul>`;
+                errorList.style.color = "red";
+            }
+        });
+
+        function clearForm() {
+            document.getElementById("validate-form").reset();
+            errorList.innerHTML = "";
+        }
+    </script>
+</body>
+</html>
