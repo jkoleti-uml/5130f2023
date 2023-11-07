@@ -1,4 +1,6 @@
-# Summary:
+# IWS Project Week 1
+
+## Summary:
 
 In this project, for the first week I have worked on implementing a flask server for the "Diet Fit" application that offers two main functionalities: BMI calculation and estimating average calorie intake. The application is designed to assist users in maintaining a healthy diet and understanding their nutritional needs.
 
