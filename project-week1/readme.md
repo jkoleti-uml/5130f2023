@@ -17,7 +17,7 @@ The project directory(`~5130f2023/diet-fit`) structure includes the following ke
 2. https://www.forbes.com/health/body/bmi-chart-for-men-and-women/
 3. https://medium.com/@jtpaasch/the-right-way-to-use-virtual-environments-1bc255a0cba7
 
-This marks the first week of development, Akhil worked on the required HTML files for the application, i have worked on the backend flask server and I feel that we've successfully implemented the basic functionality of our Diet Fit application, allowing users to calculate their BMI and estimate average calorie intake. As we move forward, we will add and enhance the features and capabilities of the application in the coming weeks.
+This marks the first week of development, Akhil worked on the required HTML files for the application, I can proudly say that I have worked on the backend flask server and I feel that we've successfully implemented the basic functionality of our Diet Fit application, allowing users to calculate their BMI and estimate average calorie intake. As we move forward, we will add and enhance the features and capabilities of the application in the coming weeks.
 
 #### Team Members-
 Akhil Repala             : Akhil_Repala@student.uml.edu
