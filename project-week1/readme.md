@@ -10,6 +10,8 @@ The project directory(`~5130f2023/diet-fit`) structure includes the following ke
 
 3. To use this application, we need to have `python3` and `pip` installed on their system. Optionally, we can set up a virtual environment for better package management. The README(https://github.com/jkoleti-uml/5130f2023/blob/main/diet-fit/readme.md) provides detailed instructions on how to create a virtual environment, and install the required packages. After the installation is complete, we can start the Flask server by running `main.py`, and it will be ready to accept requests at port `9000` for BMI and calorie intake calculations.
 
+4. `ui` directory contains all the files which are required by the front-end. 
+
 ### References -
 1. https://www.calculator.net/calorie-calculator.html
 2. https://www.forbes.com/health/body/bmi-chart-for-men-and-women/
