@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function errorSignIn(error) {
-    alert(`user signin failed - ${error}, redirecting to index.html`)
-    window.location.href = 'index.html';
+    alert(`user signin failed - ${error}, redirecting to main.html`)
+    window.location.href = 'main.html';
 }

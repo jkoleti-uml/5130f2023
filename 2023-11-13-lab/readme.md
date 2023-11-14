@@ -25,9 +25,9 @@ npm install
 ```
 node server.js
 ```
-3. Open the index.html file
+3. Open the main.html file
 ```
-open ~/5130f2023/2023-11-13-lab/index.html
+open ~/5130f2023/2023-11-13-lab/main.html
 ```
 4. Screenshots of the app are in the folder
 ```
