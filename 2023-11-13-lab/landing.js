@@ -70,6 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     logoutBtn.addEventListener('click', function () {
         // Redirect to the logout page
-        window.location.href = 'index.html';
+        window.location.href = 'main.html';
     });
 });
