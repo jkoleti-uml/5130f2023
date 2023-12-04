@@ -25,8 +25,9 @@ npm install
 ```
 node server.js
 ```
-3. Open localhost:3000 in a browser
-4. Screenshots of this PWA are in the folder
+3. Open localhost:3000 in Google Chrome browser.
+4. We can see the a PWA downloadable app button in the URL bar. 
+5. Screenshots of this PWA are in the folder
 ```
 ~/5130f2023/2023-11-27-lab/screenshots
 ```
