@@ -15,7 +15,7 @@ To run this application, you need to have the following software installed on yo
 - python3
 - pip3 (Python package manager)
 
-## Installation
+## Installation (Creating python virtual environment)
 1. change the directory to `~/5130f2023/diet-fit`
 ```
 cd ~/5130f2023/diet-fit
@@ -31,6 +31,13 @@ source venv/bin/activate
 4. install the dependencies
 ```
 pip3 install -r requirements.txt
+```
+
+5. Install docker based on your OS
+
+6. Bring up the mongoDB container using the docker-compose file
+```
+cd ~/5130f2023/diet-fit; docker-compose up -d
 ```
 
 ## Usage 
