@@ -1,6 +1,6 @@
 # Diet Fit App
 
-This Flask-powered web application is designed to help users calculate their BMI and estimate their average calorie intake, using their personal information as input. In the future, the application will also provide tailored diet plans for users in the weeks ahead
+This is a Fast-API powered web application which designed to help users calculate their BMI and estimate their average calorie intake, using their personal information as input. This application will also provide tailored diet and fitness plans for users ofr a week.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ To run this application, you need to have the following software installed on yo
 ```
 cd ~/5130f2023/diet-fit
 ```
-2. create a virtual env(this is done only once)
+2. create a virtual env( this is done only once)
 ```
 python3 -m venv venv
 ```
@@ -33,12 +33,6 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-5. Install docker based on your OS
-
-6. Bring up the mongoDB container using the docker-compose file
-```
-cd ~/5130f2023/diet-fit; docker-compose up -d
-```
 
 ## Usage 
 1. change the directory to `~/5130f2023/diet-fit`
@@ -51,10 +45,10 @@ source venv/bin/activate
 ```
 3. start the flask server
 ```
-python3 main.py
+python3 app.py
 ```
 
 3. To access the application, open the below url in the browser 
 ```
-http://localhost:9000/
+http://localhost:8000/
 ```
